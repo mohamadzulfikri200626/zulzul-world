@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('zw-theme');
+    if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch(e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZulZul World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-mark">ZW<span class="loader-ring"></span></div>
+</div>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<canvas id="interactive-bg" aria-hidden="true"></canvas>
+
+<header id="site-header">
+  <a class="logo-mark" href="index.html">ZW</a>
+  <nav id="category-nav">
+    <a class="nav-btn" data-page="index.html" href="index.html">all</a>
+    <a class="nav-btn" data-page="websites.html" href="websites.html">websites</a>
+    <a class="nav-btn" data-page="games.html" href="games.html">games</a>
+    <a class="nav-btn" data-page="experiments.html" href="experiments.html">experiments</a>
+    <a class="nav-btn" data-page="projects.html" href="projects.html">projects</a>
+    <a class="nav-btn nav-link" href="#about-me">about me</a>
+  </nav>
+  <div id="site-controls">
+    <button id="music-toggle" class="control-btn" aria-label="Play music" title="Music">
+      <span class="music-icon"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+    </button>
+    <button id="music-switch" class="control-btn" aria-label="Change track" title="Change track">
+      <span class="theme-icon">&#9197;</span>
+    </button>
+    <button id="theme-toggle" class="control-btn" aria-label="Toggle light mode" title="Toggle theme">
+      <span class="theme-icon">&#9789;</span>
+    </button>
+    <button class="control-btn surprise-trigger" aria-label="Surprise me" title="Surprise me!">
+      <span class="dice-icon">🎲</span>
+    </button>
+  </div>
+  <audio id="bg-music" loop preload="metadata">
+    <source src="./assets/Music/Brazilian Phonk Sport by Infraction, Emerel Gray [No Copyright Music] Hurt.mp3" type="audio/mpeg">
+    <source src="./assets/Music/NO COPYRIGHT ANIME MUSIC Tanjiro no uta Theme - Demon Slayer (Slowed and Reverb).mp3" type="audio/mpeg">
+    <source src="./assets/Music/Egzod & Maestro Chives - Royalty (ft. Neoni) Trap NCS - Copyright Free Music.mp3" type="audio/mpeg">
+  </audio>
+</header>
+
+<section id="play-zone" aria-label="Mini game dan reaksi">
+  <div class="play-row">
+    <div class="reaction-row" id="reactions" role="group" aria-label="Leave a reaction">
+      <button class="reaction-btn" data-reaction="cool" type="button">
+        <span class="reaction-emoji">❤️</span>
+        <span class="reaction-label">cool</span>
+        <span class="reaction-count" id="count-cool">0</span>
+      </button>
+      <button class="reaction-btn" data-reaction="awesome" type="button">
+        <span class="reaction-emoji">🔥</span>
+        <span class="reaction-label">awesome</span>
+        <span class="reaction-count" id="count-awesome">0</span>
+      </button>
+      <button class="reaction-btn" data-reaction="interesting" type="button">
+        <span class="reaction-emoji">👀</span>
+        <span class="reaction-label">interesting</span>
+        <span class="reaction-count" id="count-interesting">0</span>
+      </button>
+      <button class="reaction-btn" data-reaction="keepgoing" type="button">
+        <span class="reaction-emoji">🚀</span>
+        <span class="reaction-label">keep going</span>
+        <span class="reaction-count" id="count-keepgoing">0</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-path">~/zulzul-world</p>
+    <h1 id="site-title">ZulZul World</h1>
+    <p id="tagline">my little digital world<span class="cursor">_</span></p>
+    <p id="hero-description">
+     Hello, minasan! Watashiwa Zulzuldesu, mahasigma D3 Sistem Informasi di UPN Veteran Jakarta. watashi suka ngoding, membuat website, mencoba hal-hal baru, dan menjelajahi dunia teknologi. Welcome di ZulZul World, ruang kecil tempat watashi membagikan project, game, eksperimen, dan perjalanan belajarku.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#project-section" class="btn btn-primary">explore my world</a>
+      <button id="game-toggle" class="btn btn-outline" type="button">🎮 play mini game</button>
+      <button class="btn btn-small btn-surprise surprise-trigger" type="button" aria-label="Surprise me" title="Surprise me!">Surprise Me <span class="dice-icon">🎲</span></button>
+    </div>
+  </div>
+  <div class="hero-avatar-wrap">
+    <div class="avatar-frame">
+      <img src="./assets/icons/zulpp.png" alt="Foto ZulZul" id="avatar" onerror="this.style.display='none'; this.parentElement.classList.add('avatar-missing');">
+    </div>
+    <div id="social-links" class="social-links-hero">
+      <a href="https://www.instagram.com/zulzulxixixi?stkn=dDh2aGp5YjBlZDF5" target="_blank" rel="noopener">instagram</a>
+      <a href="https://www.tiktok.com/@zulzulajahhh?_r=1&_t=ZS-9A9TOaQGdcO" target="_blank" rel="noopener">tiktok</a>
+      <a href="https://wa.me/6282297662826" target="_blank" rel="noopener">whatsapp</a>
+    </div>
+  </div>
+</section>
+
+<section id="whats-new">
+  <div class="whats-new-card">
+    <span class="whats-new-badge">🔥 what's new</span>
+    <p class="whats-new-text">
+      Just added: <strong>interactive background</strong>,
+      <a href="#reactions" class="wn-highlight">leave a reaction</a>, and a
+      <a href="#game-toggle" class="wn-highlight">mini game</a>.
+    </p>
+  </div>
+</section>
+
+<section id="project-section">
+  <p class="hero-path">~/whats-inside</p>
+  <h2 class="section-title">what's inside</h2>
+  <p class="section-sub">a small collection of things i've built while learning to code.</p>
+
+  <div class="category-explorer">
+    <a href="websites.html" class="explorer-row">
+      <span class="explorer-index">01</span>
+      <span class="explorer-icon">🌐</span>
+      <span class="explorer-name">websites</span>
+      <span class="explorer-desc">website-website yang pernah aku bangun</span>
+      <span class="explorer-arrow">→</span>
+    </a>
+    <a href="games.html" class="explorer-row">
+      <span class="explorer-index">02</span>
+      <span class="explorer-icon">🎮</span>
+      <span class="explorer-name">games</span>
+      <span class="explorer-desc">game-game kecil belajar logika programming</span>
+      <span class="explorer-arrow">→</span>
+    </a>
+    <a href="experiments.html" class="explorer-row">
+      <span class="explorer-index">03</span>
+      <span class="explorer-icon">🧪</span>
+      <span class="explorer-name">experiments</span>
+      <span class="explorer-desc">eksperimen efek dan teknik baru</span>
+      <span class="explorer-arrow">→</span>
+    </a>
+    <a href="projects.html" class="explorer-row">
+      <span class="explorer-index">04</span>
+      <span class="explorer-icon">🗂️</span>
+      <span class="explorer-name">projects</span>
+      <span class="explorer-desc">tugas dan project kuliah</span>
+      <span class="explorer-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<section id="about-me">
+  <div class="about-inner">
+    <p class="hero-path">~/about-me</p>
+    <h2 class="section-title">about me</h2>
+    <ul class="about-list">
+      <li><span class="about-icon">▹</span> Mahasiswa D3 Sistem Informasi di UPN Veteran Jakarta.</li>
+      <li><span class="about-icon">▹</span> Sedang dalam perjalanan belajar coding, sedikit demi sedikit.</li>
+      <li><span class="about-icon">▹</span> Tertarik dengan frontend development, sistem informasi, dan teknologi baru.</li>
+      <li><span class="about-icon">▹</span> Selalu ingin mencoba dan membuat berbagai project baru.</li>
+    </ul>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <span class="logo-mark small">ZW</span>
+    <p id="copyright">© 2026 Mohamad Zul Fikri</p>
+  </div>
+</footer>
+
+<div id="game-overlay" class="is-hidden" role="dialog" aria-modal="true" aria-label="Mini game catch the bitcoin">
+  <canvas id="coin-canvas"></canvas>
+
+  <div class="game-hud">
+    <span class="game-stat">score <strong id="game-score">0</strong></span>
+    <span id="game-lives" class="game-lives" role="img" aria-label="Nyawa tersisa 5 dari 5">
+      <span class="game-heart">♥</span><span class="game-heart">♥</span><span class="game-heart">♥</span><span class="game-heart">♥</span><span class="game-heart">♥</span>
+    </span>
+    <button id="game-close" class="btn btn-small btn-outline" type="button">tutup</button>
+  </div>
+
+  <div id="game-over" class="game-over is-hidden">
+    <div class="game-over-card">
+      <div class="card-topbar"><span class="dot"></span><span class="card-filename">game-over</span></div>
+      <div class="game-over-body">
+        <h3 class="game-over-title">nyawa habis</h3>
+        <p class="game-over-desc">5 bitcoin lolos jatuh.</p>
+        <div class="game-over-stats">
+          <div class="game-over-stat"><span class="stat-label">score</span><strong id="game-over-score">0</strong></div>
+          <div class="game-over-stat"><span class="stat-label">best</span><strong id="game-over-best">0</strong></div>
+        </div>
+        <p id="game-over-note" class="game-over-note"></p>
+      </div>
+      <div class="card-actions">
+        <button id="game-retry" class="btn btn-small btn-primary" type="button">main lagi</button>
+        <button id="game-over-close" class="btn btn-small btn-outline" type="button">tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

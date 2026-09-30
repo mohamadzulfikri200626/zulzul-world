@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('zw-theme');
+    if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch(e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiments — ZulZul World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-mark">ZW<span class="loader-ring"></span></div>
+</div>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<canvas id="interactive-bg" aria-hidden="true"></canvas>
+
+<header id="site-header">
+  <a class="logo-mark" href="index.html">ZW</a>
+  <nav id="category-nav">
+    <a class="nav-btn" data-page="index.html" href="index.html">all</a>
+    <a class="nav-btn" data-page="websites.html" href="websites.html">websites</a>
+    <a class="nav-btn" data-page="games.html" href="games.html">games</a>
+    <a class="nav-btn" data-page="experiments.html" href="experiments.html">experiments</a>
+    <a class="nav-btn" data-page="projects.html" href="projects.html">projects</a>
+    <a class="nav-btn nav-link" href="index.html#about-me">about me</a>
+  </nav>
+  <div id="site-controls">
+    <button id="music-toggle" class="control-btn" aria-label="Play music" title="Music">
+      <span class="music-icon"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+    </button>
+    <button id="music-switch" class="control-btn" aria-label="Change track" title="Change track">
+      <span class="theme-icon">&#9197;</span>
+    </button>
+    <button id="theme-toggle" class="control-btn" aria-label="Toggle light mode" title="Toggle theme">
+      <span class="theme-icon">&#9789;</span>
+    </button>
+    <button class="control-btn surprise-trigger" aria-label="Surprise me" title="Surprise me!">
+      <span class="dice-icon">🎲</span>
+    </button>
+  </div>
+  <audio id="bg-music" loop preload="metadata">
+    <source src="./assets/Music/akaza-theme.mp3" type="audio/mpeg">
+  </audio>
+</header>
+
+<section id="page-hero">
+  <p class="hero-path">~/zulzul-world/experiments</p>
+  <h1 class="page-title">experiments</h1>
+  <p class="page-desc">Eksperimen-eksperimen kecil, tempat aku iseng coba efek dan teknik baru.</p>
+</section>
+
+<section id="project-section">
+  <div id="project-grid">
+
+    <article class="project-card" id="proj-hover-lab" data-category="experiment">
+      <div class="card-topbar"><span class="dot"></span><span class="card-filename">hover-lab.css</span><span class="status-badge">coming soon</span></div>
+      <div class="card-body">
+        <p class="card-meta">experiments / html · css</p>
+        <h3 class="card-title">CSS Hover Lab</h3>
+        <p class="card-desc">Eksperimen kecil bermain dengan efek hover, transisi, dan animasi ringan di CSS.</p>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="btn btn-small btn-outline">view project</a>
+        <a href="#" class="btn btn-small btn-ghost">source code</a>
+      </div>
+    </article>
+
+    <article class="project-card" id="proj-particle-bg" data-category="experiment">
+      <div class="card-topbar"><span class="dot"></span><span class="card-filename">particle-bg.js</span><span class="status-badge">coming soon</span></div>
+      <div class="card-body">
+        <p class="card-meta">experiments / javascript</p>
+        <h3 class="card-title">Particle Background</h3>
+        <p class="card-desc">Eksperimen animasi partikel sederhana menggunakan canvas dan JavaScript.</p>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="btn btn-small btn-outline">view project</a>
+        <a href="#" class="btn btn-small btn-ghost">source code</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <span class="logo-mark small">ZW</span>
+    <div id="social-links">
+      <a href="https://www.instagram.com/zulzulxixixi?stkn=dDh2aGp5YjBlZDF5" target="_blank" rel="noopener">instagram</a>
+      <a href="https://www.tiktok.com/@zulzulajahhh?_r=1&_t=ZS-9A9TOaQGdcO" target="_blank" rel="noopener">tiktok</a>
+      <a href="https://wa.me/6282297662826" target="_blank" rel="noopener">whatsapp</a>
+    </div>
+    <p id="copyright">© 2026 Mohamad Zul Fikri</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
