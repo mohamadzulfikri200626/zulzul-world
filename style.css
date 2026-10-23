@@ -8,6 +8,8 @@
   --red-dim: #7a1524;
   --red-glow: rgba(224, 38, 63, 0.35);
 
+  --green: #2bff00;
+
   --white: #f4f4f2;
   --muted: #8b8b92;
 
@@ -364,6 +366,12 @@ section {
   background: var(--red);
   flex-shrink: 0;
 }
+
+#proj-kimetsu-fanpage .dot {
+  background-color: var(--green);
+  box-shadow: 0 0 8px var(--green);
+}
+
 
 .card-filename {
   font-family: var(--font-mono);
