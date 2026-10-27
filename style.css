@@ -359,6 +359,13 @@ section {
   border-bottom: 1px solid var(--border);
 }
 
+.card-topbar .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
 
 #proj-kimetsu-fanpage .dot {
   background-color: var(--green);
